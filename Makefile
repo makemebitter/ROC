@@ -37,14 +37,14 @@ GEN_GPU_SRC	?= cuda_helper.cu load_task.cu nccl_task.cu scattergather_kernel.cu 
 		types.cu dropout_kernel.cu initializer_kernel.cu softmax_kernel.cu # .cu files
 
 # You can modify these variables, some will be appended to by the runtime makefile
-INC_FLAGS	?= -Inccl/build/include -Icub
+INC_FLAGS	?= -Inccl/build/include 
 CC_FLAGS	?=
 NVCC_FLAGS	?=
 GASNET_FLAGS	?=
 LD_FLAGS	?= -lcudart -lcuda -lcudnn -lcublas -lcurand -lnccl -Lnccl/build/lib
 # For Point and Rect typedefs
 CC_FLAGS	+= -std=c++11
-NVCC_FLAGS	+= -std=c++11
+NVCC_FLAGS	+= -std=c++11 
 
 ###########################################################################
 #
